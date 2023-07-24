@@ -10,10 +10,10 @@ let countedWords = {}
 text.map((ele) => {
   countedWords[ele] = (countedWords[ele] || 0) +1;
     if(countedWords[ele] === 2) count++
-})
-console.log(countedWords)
+});
 
-console.log(typeof(myText))
+
+
 
 
 

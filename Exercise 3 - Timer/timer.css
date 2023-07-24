@@ -1,4 +1,36 @@
 #myTimer {
     color: red;
     font-size: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+h2{
+    text-align: center;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    font-size: 45px;
+}
+
+button {
+    width: fit-content;
 }

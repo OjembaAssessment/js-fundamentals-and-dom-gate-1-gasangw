@@ -10,35 +10,46 @@ const myTimer =() => {
    seconds--
 }
 
+function addOrSubtractTime(){
+    containerOfBtns.addEventListener('click', e=> {
+        e.preventDefault();
+        if(e.target.id === 'minus-btn'){
+            console.log('minus btn clicked')
+            seconds -= 1
+        }
+        if(e.target.id ==='plus-btn'){
+            console.log('minus btn clicked')
+            seconds += 1
+        }
+        Time.textContent = seconds;
+    })  
+}
 
+function resetTime(){
+    controlBtns.addEventListener('click', e=> {
+        if(e.target.id === "reset") {
+            seconds = 0;
+            Time.textContent = seconds;        
+        }
+   })
+}
 
-
-containerOfBtns.addEventListener('click', e=> {
-    e.preventDefault();
-    if(e.target.id === 'minus-btn'){
-        console.log('minus btn clicked')
-        seconds -= 1
-    }
-    if(e.target.id ==='plus-btn'){
-        console.log('minus btn clicked')
-        seconds += 1
-    }
-    Time.textContent = seconds;
-})
-
+var myInterval;
 controlBtns.addEventListener('click', e=> {
-    if(e.target.id === "reset") {
-        seconds = 0;
-    }
-    if(e.target.id === "start") {
-        let myInterval = setInterval(myTimer, 1000);
+      if(e.target.id === "start") {
+        myInterval = setInterval(myTimer, 1000);
         e.target.textContent = 'STOP'
-        e.target.className = 'stop'
+        e.target.setAttribute('id', '')
+        e.target.setAttribute('class', 'stop')
         return myInterval;
     }
-
-    if(e.target.className === 'stop'){
+    
+    if(e.target.className === 'stop' || seconds == 0){
+        e.target.textContent = 'START'
+        e.target.setAttribute('id', 'start')
+        e.target.setAttribute('class', '')
         clearInterval(myInterval)
+        addOrSubtractTime();
+        resetTime()
     }
-
 })

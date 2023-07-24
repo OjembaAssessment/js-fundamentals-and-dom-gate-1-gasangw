@@ -14,11 +14,9 @@ function addOrSubtractTime(){
     containerOfBtns.addEventListener('click', e=> {
         e.preventDefault();
         if(e.target.id === 'minus-btn'){
-            console.log('minus btn clicked')
             seconds -= 1
         }
         if(e.target.id ==='plus-btn'){
-            console.log('minus btn clicked')
             seconds += 1
         }
         Time.textContent = seconds;

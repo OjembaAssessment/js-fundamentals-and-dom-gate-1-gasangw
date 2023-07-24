@@ -12,7 +12,7 @@ let mostOftenOccuringWords = Object.entries(countedWords).sort((a,b) =>  b[1] - 
 
 const highlightedParagraph = myText.replace(
     new RegExp(`\\b(${mostOftenOccuringWords.join('|')})\\b`, 'gi'),
-    '<span style="background-color: yellow">$1</span>'
+    '<span style="background-color: red">$1</span>'
 );
 
 document.getElementById("myParagraph").innerHTML = highlightedParagraph;
